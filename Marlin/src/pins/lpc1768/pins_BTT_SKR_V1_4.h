@@ -51,8 +51,8 @@
 #define X_DIAG_PIN                         P1_29  // X-STOP
 #define Y_DIAG_PIN                         P1_28  // Y-STOP
 #define Z_DIAG_PIN                         P1_27  // Z-STOP
-#define E0_DIAG_PIN                        P1_26  // E0DET
-#define E1_DIAG_PIN                        P1_25  // E1DET
+#define X2_DIAG_PIN                        P1_26  // X2DET
+#define Y2_DIAG_PIN                        P1_25  // Y2DET
 
 //
 // Limit Switches
@@ -60,9 +60,9 @@
 #if X_STALL_SENSITIVITY
   #define X_STOP_PIN                  X_DIAG_PIN
   #if X_HOME_DIR < 0
-    #define X_MAX_PIN                      P1_26  // E0DET
+    #define X_MAX_PIN                      P1_26  // X2DET
   #else
-    #define X_MIN_PIN                      P1_26  // E0DET
+    #define X_MIN_PIN                      P1_26  // X2DET
   #endif
 #else
   #define X_STOP_PIN                       P1_29  // X-STOP
@@ -71,9 +71,9 @@
 #if Y_STALL_SENSITIVITY
   #define Y_STOP_PIN                  Y_DIAG_PIN
   #if Y_HOME_DIR < 0
-    #define Y_MAX_PIN                      P1_25  // E1DET
+    #define Y_MAX_PIN                      P1_25  // Y2DET
   #else
-    #define Y_MIN_PIN                      P1_25  // E1DET
+    #define Y_MIN_PIN                      P1_25  // Y2DET
   #endif
 #else
   #define Y_STOP_PIN                       P1_28  // Y-STOP
@@ -102,8 +102,8 @@
 //
 // Filament Runout Sensor
 //
-#define FIL_RUNOUT_PIN                     P1_26  // E0DET
-#define FIL_RUNOUT2_PIN                    P1_25  // E1DET
+#define FIL_RUNOUT_PIN                     P1_26  // X2DET
+#define FIL_RUNOUT2_PIN                    P1_25  // Y2DET
 
 //
 // Power Supply Control
@@ -143,19 +143,27 @@
   #define Z_CS_PIN                         P1_08
 #endif
 
-#define E0_STEP_PIN                        P2_13
-#define E0_DIR_PIN                         P0_11
-#define E0_ENABLE_PIN                      P2_12
-#ifndef E0_CS_PIN
-  #define E0_CS_PIN                        P1_04
+#define X2_STEP_PIN                        P2_13
+#define X2_DIR_PIN                         P0_11
+#define X2_ENABLE_PIN                      P2_12
+#ifndef X2_CS_PIN
+  #define X2_CS_PIN                        P1_04
 #endif
 
-#define E1_STEP_PIN                        P1_15
-#define E1_DIR_PIN                         P1_14
-#define E1_ENABLE_PIN                      P1_16
-#ifndef E1_CS_PIN
-  #define E1_CS_PIN                        P1_01
+#define Y2_STEP_PIN                        P1_15
+#define Y2_DIR_PIN                         P1_14
+#define Y2_ENABLE_PIN                      P1_16
+#ifndef Y2_CS_PIN
+  #define Y2_CS_PIN                        P1_01
 #endif
+
+#define E0_STEP_PIN                        P1_00
+#define E0_DIR_PIN                         P1_25
+#define E0_ENABLE_PIN                      P1_26
+#ifndef E0_CS_PIN
+  #define E0_CS_PIN                        P0_01
+#endif
+
 
 #define TEMP_1_PIN                      P0_23_A0  // A2 (T2) - (69) - TEMP_1_PIN
 #define TEMP_BED_PIN                    P0_25_A2  // A0 (T0) - (67) - TEMP_BED_PIN
@@ -188,8 +196,8 @@
   //#define Y2_HARDWARE_SERIAL Serial1
   //#define Z_HARDWARE_SERIAL  Serial1
   //#define Z2_HARDWARE_SERIAL Serial1
-  //#define E0_HARDWARE_SERIAL Serial1
-  //#define E1_HARDWARE_SERIAL Serial1
+  //#define X2_HARDWARE_SERIAL Serial1
+  //#define Y2_HARDWARE_SERIAL Serial1
   //#define E2_HARDWARE_SERIAL Serial1
   //#define E3_HARDWARE_SERIAL Serial1
   //#define E4_HARDWARE_SERIAL Serial1
@@ -206,11 +214,11 @@
   #define Z_SERIAL_TX_PIN                  P1_08
   #define Z_SERIAL_RX_PIN                  P1_08
 
-  #define E0_SERIAL_TX_PIN                 P1_04
-  #define E0_SERIAL_RX_PIN                 P1_04
+  #define X2_SERIAL_TX_PIN                 P1_04
+  #define X2_SERIAL_RX_PIN                 P1_04
 
-  #define E1_SERIAL_TX_PIN                 P1_01
-  #define E1_SERIAL_RX_PIN                 P1_01
+  #define Y2_SERIAL_TX_PIN                 P1_01
+  #define Y2_SERIAL_RX_PIN                 P1_01
 
   #define Z2_SERIAL_TX_PIN                 P1_01
   #define Z2_SERIAL_RX_PIN                 P1_01
