@@ -67,6 +67,19 @@
   #endif
 #endif
 
+#ifndef FILWIDTH_PIN
+  #if ENABLED(FILAMENT_WIDTH_SENSOR)
+    #if HOTENDS == 1
+      #undef TEMP_SENSOR_CHAMBER
+      #define FILWIDTH_PIN              TEMP_1_PIN
+    #else
+      #undef BEEPER_PIN
+      #define FILWIDTH_PIN              P1_30 //(37) not 5V tolerant
+    #endif
+  #endif
+#endif
+
+
 //
 // Heaters / Fans
 //
@@ -97,6 +110,8 @@
 #if HAS_WIRED_LCD && DISABLED(LCD_USE_I2C_BUZZER)
   #define BEEPER_PIN                       P1_30  // (37) not 5V tolerant
 #endif
+
+
 
 //
 // SD Support
