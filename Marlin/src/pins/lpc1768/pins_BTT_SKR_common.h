@@ -50,10 +50,12 @@
 //  3.3V max when defined as an analog input
 //
 #ifndef TEMP_0_PIN
-  #define TEMP_0_PIN                    P0_24_A1  // A1 (T1) - (68) - TEMP_0_PIN
+#define TEMP_0_PIN                    P0_24_A1  // A1 (T1) - (68) - TEMP_0_PIN
+//#define TEMP_0_PIN                    P0_26_A3 //SPI
+//#define TEMP_0_PIN                    P1_30_A4 //EXP1
 #endif
 #ifndef TEMP_1_PIN
-  #define TEMP_1_PIN                    P0_25_A2  // A2 (T2) - (69) - TEMP_1_PIN
+  define TEMP_1_PIN                    P0_25_A2  // A2 (T2) - (69) - TEMP_1_PIN
 #endif
 #ifndef TEMP_BED_PIN
   #define TEMP_BED_PIN                  P0_23_A0  // A0 (T0) - (67) - TEMP_BED_PIN
@@ -63,7 +65,8 @@
   #if TEMP_SENSOR_PROBE
     #define TEMP_PROBE_PIN            TEMP_1_PIN
   #elif TEMP_SENSOR_CHAMBER
-    #define TEMP_CHAMBER_PIN          TEMP_1_PIN
+  //  #define TEMP_CHAMBER_PIN          TEMP_1_PIN
+    #define TEMP_CHAMBER_PIN          P0_26_A3
   #endif
 #endif
 
@@ -74,7 +77,7 @@
       #define FILWIDTH_PIN              TEMP_1_PIN
     #else
       #undef BEEPER_PIN
-      #define FILWIDTH_PIN              P1_30 //(37) not 5V tolerant
+      #define FILWIDTH_PIN              P1_30_A4 //(37) not 5V tolerant
     #endif
   #endif
 #endif

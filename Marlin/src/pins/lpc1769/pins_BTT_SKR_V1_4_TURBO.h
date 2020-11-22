@@ -24,6 +24,10 @@
 #define BOARD_INFO_NAME "BTT SKR V1.4 TURBO"
 #define SKR_HAS_LPC1769
 
+//#ifndef MAX31855_CS_PIN
+//    #define MAX31855_CS_PIN TEMP_0_PIN
+//    #define MAX6675_SS_PIN MAX31855_CS_PIN
+//#endif
 //
 // Include SKR 1.4 pins
 //
