@@ -940,7 +940,7 @@ inline void tmc_standby_setup() {
 void setup() {
 
   tmc_standby_setup();  // TMC Low Power Standby pins must be set early or they're not usable
-
+  PSU_ON();
   #if ENABLED(MARLIN_DEV_MODE)
     auto log_current_ms = [&](PGM_P const msg) {
       SERIAL_ECHO_START();
